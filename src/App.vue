@@ -7,11 +7,8 @@ const Calendar = defineAsyncComponent(() => import('./components/calendar/index.
 </script>
 
 <template>
-  <div>
-    <h1 class="text-3xl font-bold underline">
-    Hello world! 
-  </h1>
-  <Calendar />
+  <div class="max-w-2xl mx-auto py-16">
+    <Calendar class="w-full"/>
   </div>
    
 </template>

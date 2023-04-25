@@ -1,13 +1,27 @@
 <template>
-    <div>
-
+    <div class="bg-gray-700 p-3 rounded-t-md grid place-items-center">
+        <span class="flex items-center space-x-3 select-none text-gray-50">
+            <ChevronLeftIcon class="h-5 w-5 text-gray-400 cursor-pointer" @click="() => modifyMonth(-1)" />
+            <span>{{ computedMonth }}</span>
+            <ChevronRightIcon class="h-5 w-5 text-gray-400 cursor-pointer" @click="() => modifyMonth(1)" />
+        </span>
     </div>
 </template>
 
 <script setup lang="ts">
+import dayjs from 'dayjs'
+import { ref, computed } from 'vue'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
 
+const yearEmit = defineEmits<{ (e: 'selected', v: number): void }>()
+
+const month = ref<number>(dayjs().month())
+
+const computedMonth = computed(() => dayjs().month(month.value).format('MMMM'))
+
+function modifyMonth(v: number) {
+    month.value += v
+    yearEmit('selected', month.value)
+}
 </script>
 
-<style scoped>
-
-</style>

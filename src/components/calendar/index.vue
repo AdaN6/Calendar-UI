@@ -1,11 +1,11 @@
 <template>
   <div class="flex space-x-5" v-bind="$attrs">
-      <div class="flex flex-col">
+      <div class="flex flex-col flex-grow">
         <Year />
         <Month />
         <Dates /> 
     </div>
-    <div class="w-1/2 ">
+    <div class="w-1/4 ">
         <span v-if="selectedDateValue"> 
               You have selected 
               <br>
