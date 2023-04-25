@@ -2,7 +2,7 @@
     <div class="bg-gray-700 p-3 rounded-t-md grid place-items-center">
         <span class="flex items-center space-x-3 select-none text-gray-50">
             <ChevronLeftIcon class="h-5 w-5 text-gray-400 cursor-pointer" @click="() => modifyMonth(-1)" />
-            <span>{{ computedMonth }}</span>
+            <span class="w-20 text-center ">{{ computedMonth }}</span>
             <ChevronRightIcon class="h-5 w-5 text-gray-400 cursor-pointer" @click="() => modifyMonth(1)" />
         </span>
     </div>
