@@ -36,7 +36,14 @@ onMounted(() => {
     generateDatesForMonth()
 })
 
-
+// when the month and year change date also change
+// 1st watch the selectedValues
+watch(() => dateProps.selectedValues, (v) => {
+    generateDatesForMonth(v.month, v.year)
+}, {
+    // deep watch is if only changing one key and not changing entire object, the watch "dateProps.selectedValues" won't run
+    deep: true
+})
 
 // create array of days
 
