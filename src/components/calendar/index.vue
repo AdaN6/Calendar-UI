@@ -9,7 +9,7 @@
         <span v-if="selectedDateValue"> 
               You have selected 
               <br>
-              {{ `${selectedDateValue} -` }}
+              {{ `${selectedDateValue} - ${selectedValues.month + 1} - ${selectedValues.year}` }}
           </span>
     </div> 
   </div>
@@ -36,7 +36,6 @@ const selectedValues = reactive({
 
 const changeYear = (v) => {
   selectedValues.year = v
-
 }
 
 const changeMonth = (v) => {
