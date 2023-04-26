@@ -13,7 +13,7 @@ import dayjs from 'dayjs'
 import { ref, computed } from 'vue'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
 
-const yearEmit = defineEmits<{ (e: 'selected', v: number): void }>()
+const monthEmit = defineEmits<{ (e: 'selected', v: number): void }>()
 
 const month = ref<number>(dayjs().month())
 
@@ -21,7 +21,7 @@ const computedMonth = computed(() => dayjs().month(month.value).format('MMMM'))
 
 function modifyMonth(v: number) {
     month.value += v
-    yearEmit('selected', month.value)
+    monthEmit('selected', month.value)
 }
 </script>
 
