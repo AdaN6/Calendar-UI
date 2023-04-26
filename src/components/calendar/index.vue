@@ -5,7 +5,7 @@
         <Month @selected="changeMonth"/>
         <Dates :selectedValues="selectedValues" :selectedDate="selectedDateValue" @selected="changeDate" />
       </div>
-    <div class="w-1/4 ">
+    <div class="w-1/4 font-semibold">
         <span v-if="selectedDateValue"> 
               You have selected 
               <br>
@@ -36,10 +36,14 @@ const selectedValues = reactive({
 
 const changeYear = (v) => {
   selectedValues.year = v
+    // for the purpose of not showing value while changing either only month or year
+  selectedDateValue.value = null
 }
 
 const changeMonth = (v) => {
   selectedValues.month = v
+    // for the purpose of not showing value while changing either only month or year
+  selectedDateValue.value = null
 }
 
 const changeDate = (v) => {

@@ -20,7 +20,7 @@
                 @click="selected(d.date)"
                
                 :class="{
-                    'bg-black text-blue-100': (d.date == dayjs().date() && dateProps.selectedValues.month == dayjs().month() 
+                    'bg-gray-800 text-blue-100': (d.date == dayjs().date() && dateProps.selectedValues.month == dayjs().month() 
                     && dateProps.selectedValues.year == dayjs().year()),
                     'bg-emerald-500 text-gray-50 ring ring-green-700': d.date == date,
                     'bg-gray-300': d.date != date
