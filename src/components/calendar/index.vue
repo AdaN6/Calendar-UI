@@ -3,8 +3,8 @@
       <div class="flex flex-col flex-grow">
         <Year @selected="changeYear"/>
         <Month @selected="changeMonth"/>
-        <Dates :selectedValues="selectedValues" :selectedDate="selectedDate"/> 
-    </div>
+        <Dates :selectedValues="selectedValues" :selectedDate="selectedDateValue" @selected="changeDate" />
+      </div>
     <div class="w-1/4 ">
         <span v-if="selectedDateValue"> 
               You have selected 
@@ -41,6 +41,10 @@ const changeYear = (v) => {
 
 const changeMonth = (v) => {
   selectedValues.month = v
+}
+
+const changeDate = (v) => {
+  selectedDateValue.value = v
 }
 
 </script>
